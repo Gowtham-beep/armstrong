@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+using namespace std;
+int digit(int n);
+int main()
+{
+    int n, temp, r, num=0, pr;
+    cout << "enter the number:\n";
+    cin >> n;
+    temp = n;
+    cout << "Number of digits is " << digit(n) << endl;
+    pr = digit(n);
+    do
+    {
+        r = n % 10;
+        num = num + pow(r, pr);
+        n = n / 10;
+
+    } while (n != 0);
+    //num=num+1;
+    cout<<"The compared number is "<<num<<endl;
+    if (temp == num)
+    {
+        cout << "The number is Armstrong number\n";
+    }
+    else
+    {
+        cout << "The number is not Armstrong number\n";
+    }
+
+    return 0;
+}
+int digit(int n)
+{
+    int i;
+    for (i = 1; i < n; i++)
+    {
+        n = n / 10;
+    }
+    return i;
+}
